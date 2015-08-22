@@ -1,13 +1,11 @@
 ![Slider mockup](slider-mockup.jpg?raw=true "Slider mockup")
 
 #Task description
------------------
 
 Create an independent UI component(card) that can be injected in others components or required by other module.
 
  
 #Card description
------------------
 
 (4) Image
 
@@ -23,7 +21,6 @@ positioned in center of the screen(vertically and horizontally).
  
  
 # Test flow
------------
 
 Create a page with:
 
