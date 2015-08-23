@@ -1,7 +1,8 @@
 (function() {
   'use strict';
 
-  angular.module('common.cards-slider', [
+  angular.module('card', [
+    'ngAnimate'
   ]);
 
 })();

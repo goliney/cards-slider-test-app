@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('common.cards-slider')
+    .module('card')
     .factory('CardsDataService', CardsDataService);
 
   CardsDataService.$inject = ['$http', 'API', '$q'];
@@ -19,7 +19,12 @@
       if (id < 0 || id > 499) {
         throw new Error('Card id must be from 0 to 499');
       }
-      return $http.get(API.card + id);
+      var promise = $http.get(API.card + id).then(function(response) {
+        var data = response.data;
+        data.url = API.root + data.url;
+        return data;
+      });
+      return promise;
     }
 
     function list(startId, quantity) {

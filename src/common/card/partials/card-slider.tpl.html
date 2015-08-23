@@ -1,0 +1,17 @@
+<div class="cards-slider-wrapper">
+    <div class="close-slider ctrl glyphicon glyphicon-remove" ng-click="vm.close()"></div>
+    <div class="controls">
+        <span ng-click="vm.prev()"  ng-show="!vm.isPlaying" class="ctrl glyphicon glyphicon-chevron-left"></span>
+        <span ng-click="vm.play()"  ng-show="!vm.isPlaying" class="ctrl glyphicon glyphicon-play"></span>
+        <span ng-click="vm.pause()" ng-show="vm.isPlaying"  class="ctrl glyphicon glyphicon-pause"></span>
+        <span ng-click="vm.next()"  ng-show="!vm.isPlaying" class="ctrl glyphicon glyphicon-chevron-right"></span>
+    </div>
+
+    <div class="thumbnail">
+        <img ng-src="{{vm.cards[0].url}}">
+        <div class="caption">
+            <h4>{{vm.cards[0].title}}</h4>
+            <p>{{vm.cards[0].desc}}</p>
+        </div>
+    </div>
+</div>

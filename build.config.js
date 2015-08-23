@@ -80,7 +80,7 @@ module.exports = {
     css: [
       'vendor/bootstrap-css-only/css/bootstrap.css'
     ],
-    assets: [
+    fonts: [
       'vendor/bootstrap-css-only/fonts/*'
     ]
   }

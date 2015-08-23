@@ -1,0 +1,43 @@
+.cards-slider-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgba(0,0,0,.5);
+
+    .close-slider {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .controls {
+        position: absolute;
+        bottom: 5%;
+        width: 100%;
+        text-align: center;
+
+        .ctrl {
+            margin: 0 20px;
+        }
+    }
+
+    .ctrl {
+        font-size: 30px;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .thumbnail {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        width: 250px;
+        margin: 0 auto;
+    }
+}

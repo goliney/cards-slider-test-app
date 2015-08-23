@@ -103,14 +103,13 @@ module.exports = function ( grunt ) {
           }
        ]   
       },
-      build_vendor_assets: {
+      build_vendor_fonts: {
         files: [
           { 
-            src: [ '<%= vendor_files.assets %>' ],
-            dest: '<%= build_dir %>/assets/',
+            src: [ '<%= vendor_files.fonts %>' ],
+            dest: '<%= build_dir %>/',
             cwd: '.',
-            expand: true,
-            flatten: true
+            expand: true
           }
        ]   
       },
@@ -440,7 +439,7 @@ module.exports = function ( grunt ) {
         files: [ 
           'src/assets/**/*'
         ],
-        tasks: [ 'copy:build_app_assets', 'copy:build_vendor_assets' ]
+        tasks: [ 'copy:build_app_assets', 'copy:build_vendor_fonts' ]
       },
 
       /**
@@ -508,7 +507,7 @@ module.exports = function ( grunt ) {
    */
   grunt.registerTask( 'build', [
     'clean', 'html2js', 'jshint', 'sass:build', 'concat:build_css', 'copy:build_app_assets',
-    'copy:build_vendor_assets', 'copy:build_appjs', 'copy:build_vendorjs', 'copy:build_vendorcss',
+    'copy:build_vendor_fonts', 'copy:build_appjs', 'copy:build_vendorjs', 'copy:build_vendorcss',
     'index:build', 'karmaconfig', 'karma:continuous'
   ]);
 

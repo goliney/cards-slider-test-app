@@ -2,6 +2,8 @@
 http://goliney.github.io/cards-slider-test-app
 
 
+# Mockup
+
 ![Slider mockup](slider-mockup.jpg?raw=true "Slider mockup")
 
 
