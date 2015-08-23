@@ -1,6 +1,11 @@
+# Demo
+http://goliney.github.io/cards-slider-test-app
+
+
 ![Slider mockup](slider-mockup.jpg?raw=true "Slider mockup")
 
-#Task description
+
+# Task description
 
 Create an independent UI component(card) that can be injected in others components or required by other module.
 
