@@ -30,6 +30,7 @@
         font-size: 30px;
         color: #fff;
         cursor: pointer;
+        text-shadow: 5px 5px rgba(0,0,0,.3);
     }
 
     .thumbnail {
@@ -39,5 +40,70 @@
         transform: translateY(-50%) translateX(-50%);
         width: 250px;
         margin: 0 auto;
+        box-shadow: 5px 5px rgba(0,0,0,.3);
+    }
+
+    .thumbnail.ng-hide-add         { animation:1s disappear ease; }
+    .thumbnail.ng-hide-remove      { animation:1s appear ease; }
+
+    &.reverse {
+        .thumbnail.ng-hide-add         { animation:1s disappearReverse ease; }
+        .thumbnail.ng-hide-remove      { animation:1s appearReverse ease; }
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        left: 100%;
+        transform: translateY(-50%) translateX(0%);
+    }
+
+    100% {
+        opacity: 1;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+    }
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+    }
+
+    100% {
+        opacity: 0;
+        left: 0%;
+        transform: translateY(-50%) translateX(-100%);
+    }
+}
+
+@keyframes appearReverse {
+    0% {
+        opacity: 0;
+        left: 0%;
+        transform: translateY(-50%) translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+    }
+}
+
+@keyframes disappearReverse {
+    0% {
+        opacity: 1;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+    }
+
+    100% {
+        opacity: 0;
+        left: 100%;
+        transform: translateY(-50%) translateX(0%);
     }
 }

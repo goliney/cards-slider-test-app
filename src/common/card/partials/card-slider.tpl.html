@@ -1,4 +1,4 @@
-<div class="cards-slider-wrapper">
+<div class="cards-slider-wrapper" ng-class="{'reverse': vm.isReverse}">
     <div class="close-slider ctrl glyphicon glyphicon-remove" ng-click="vm.close()"></div>
     <div class="controls">
         <span ng-click="vm.prev()"  ng-show="!vm.isPlaying" class="ctrl glyphicon glyphicon-chevron-left"></span>
@@ -7,11 +7,11 @@
         <span ng-click="vm.next()"  ng-show="!vm.isPlaying" class="ctrl glyphicon glyphicon-chevron-right"></span>
     </div>
 
-    <div class="thumbnail">
-        <img ng-src="{{vm.cards[0].url}}">
+    <div class="thumbnail" ng-repeat="card in vm.cards" ng-show="vm.index === $index">
+        <img ng-src="{{card.url}}" alt="{{card.title}}">
         <div class="caption">
-            <h4>{{vm.cards[0].title}}</h4>
-            <p>{{vm.cards[0].desc}}</p>
+            <h4>{{card.title}}</h4>
+            <p>{{card.short_desc}}</p>
         </div>
     </div>
 </div>

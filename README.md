@@ -2,6 +2,11 @@
 http://goliney.github.io/cards-slider-test-app
 
 
+# Actual `card` component
+
+[card component folder](src/common/card/)
+
+
 # Mockup
 
 ![Slider mockup](slider-mockup.jpg?raw=true "Slider mockup")
@@ -66,3 +71,8 @@ You can use any framework, libraries or native JS. You are not allowed to use jQ
 Keep in mind, that solution will be used in big application, so your part must be fully independent. 
 
 Setup of any environment is a plus.
+
+
+# Todo
+
+- tests
