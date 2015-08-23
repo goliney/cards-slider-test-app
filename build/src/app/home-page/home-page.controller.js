@@ -14,7 +14,6 @@
     activate();
 
     function activate() {
-      console.log('HomePageController activated');
     }
 
     function showSlider() {
