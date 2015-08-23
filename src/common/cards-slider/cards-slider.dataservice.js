@@ -27,7 +27,7 @@
       for (var id = startId; id < quantity; id++) {
         promises.push(get(id));
       }
-      return $q.when(promises);
+      return $q.all(promises);
     }
   }
 })();
