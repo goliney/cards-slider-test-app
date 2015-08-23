@@ -8,7 +8,7 @@
     'ngResource',
 
     /* Our reusable cross app code modules */
-    'common.slider',
+    'common.cards-slider',
 
     /* 3rd Party modules */
     'ui.router'

@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('common.slider', [
+  angular.module('common.cards-slider', [
   ]);
 
 })();

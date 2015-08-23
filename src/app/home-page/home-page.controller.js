@@ -5,9 +5,9 @@
     .module('app.home-page')
     .controller('HomePageController', HomePage);
 
-  HomePage.$inject = [];
+  HomePage.$inject = ['CardsDataService'];
 
-  function HomePage() {
+  function HomePage(CardsDataService) {
     var vm = this;
     vm.showSlider = showSlider;
 
@@ -15,6 +15,7 @@
 
     function activate() {
       console.log('HomePageController activated');
+      CardsDataService.list(0, 10).then(function(response){console.log(response);});
     }
 
     function showSlider() {
