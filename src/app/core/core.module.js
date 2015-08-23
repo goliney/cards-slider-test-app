@@ -3,7 +3,6 @@
 
   angular.module('app.core', [
     /* Angular modules */
-    'ngAnimate',
     'ngSanitize',
     'ngResource',
 
