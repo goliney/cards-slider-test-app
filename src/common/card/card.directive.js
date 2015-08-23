@@ -1,17 +1,16 @@
-(function() {
+(function () {
   'use strict';
 
   angular
     .module('card')
     .directive('cardsSlider', CardsSlider);
 
-  CardsSlider.$inject = ['cardsSlider','CardsDataService', '$document'];
+  CardsSlider.$inject = ['cardsSlider', 'CardsDataService', '$document', '$interval'];
 
-  function CardsSlider(cardsSlider, CardsDataService, $document) {
+  function CardsSlider(cardsSlider, CardsDataService, $document, $interval) {
     var directive = {
       restrict: 'E',
       replace: true,
-      transclude: true,
       templateUrl: 'card/partials/card-slider.tpl.html',
       controllerAs: 'vm',
       bindToController: true,
@@ -23,37 +22,48 @@
 
     function CardsSliderCtrl() {
       var vm = this;
+
+      var cardsQuantity = 10;   // amount of cards in a slider
+      var playHandler;
+      var frequency = 5000;     // ms
+
+      vm.index = 0;             // index of card being shown
       vm.prev = prev;
       vm.play = play;
       vm.pause = pause;
       vm.next = next;
       vm.isPlaying = false;
       vm.cards = [];
+      vm.isReverse = false;
 
       activate();
 
       function activate() {
-        CardsDataService.list(0, 10).then(function(cards) {
+        CardsDataService.list(0, cardsQuantity).then(function (cards) {
           vm.cards = cards;
         });
       }
 
       function prev() {
-        console.log('prev');
+        vm.isReverse = true;
+        vm.index = vm.index === 0 ? cardsQuantity - 1 : vm.index - 1;
       }
 
       function next() {
-        console.log('next');
+        vm.isReverse = false;
+        vm.index = vm.index === cardsQuantity - 1 ? 0 : vm.index + 1;
       }
 
       function play() {
-        console.log('play');
         vm.isPlaying = true;
+        playHandler = $interval(function() {
+          vm.next();
+        }, frequency);
       }
 
       function pause() {
-        console.log('pause');
         vm.isPlaying = false;
+        $interval.cancel(playHandler);
       }
     }
 
@@ -79,6 +89,8 @@
             fn();
             break;
         }
+
+        scope.$apply();
       }
 
       // close cards slider
@@ -88,7 +100,7 @@
         element.remove();
       }
 
-      scope.$on('$destroy', function() {
+      scope.$on('$destroy', function () {
         $document.unbind('keydown', keyBind);
       });
     }
