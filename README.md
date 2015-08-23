@@ -77,3 +77,4 @@ Setup of any environment is a plus.
 
 - tests
 - freeze animation on tab blur
+- cache cards data (to discuss)
