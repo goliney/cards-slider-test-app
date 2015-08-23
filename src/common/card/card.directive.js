@@ -79,10 +79,14 @@
             vm.close();
             break;
           case 39:        // right
-            vm.next();
+            if (!vm.isPlaying) {
+              vm.next();
+            }
             break;
           case 37:        // left
-            vm.prev();
+            if (!vm.isPlaying) {
+              vm.prev();
+            }
             break;
           case 32:        // space
             var fn = vm.isPlaying ? vm.pause : vm.play;

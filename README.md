@@ -76,3 +76,4 @@ Setup of any environment is a plus.
 # Todo
 
 - tests
+- freeze animation on tab blur
